@@ -1,4 +1,4 @@
-# 竞品分析 / Competitor
+# 竞品分析 / Competitors
 
 ## StarkNet
 
