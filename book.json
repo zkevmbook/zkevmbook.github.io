@@ -1,0 +1,28 @@
+{
+    "title": "精通 ZKEVM",
+
+    "plugins": [
+        "github@^2.0.0",
+        "github-buttons@2.1.0",
+        "tbfed-pagefooter@^0.0.1"
+    ],
+
+    "pluginsConfig": {
+        "github": {
+            "url": "https://github.com/HAOYUatHZ/mastering-zkevm"
+        },
+        "github-buttons": {
+            "repo": "HAOYUatHZ/mastering-zkevm",
+            "types": [
+                "star",
+                "watch",
+                "fork"
+            ],
+            "size": "small"
+        },
+        "tbfed-pagefooter": {
+            "modify_label": "该文件修订时间：",
+            "modify_format": "YYYY-MM-DD HH:mm:ss"
+        }
+    }
+}

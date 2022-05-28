@@ -1,5 +1,8 @@
 {
   "dependencies": {
+    "gitbook-plugin-github": "^2.0.0",
+    "gitbook-plugin-github-buttons": "2.1.0",
+    "gitbook-plugin-tbfed-pagefooter": "^0.0.1",
     "honkit": "^3.7.1"
   }
 }
