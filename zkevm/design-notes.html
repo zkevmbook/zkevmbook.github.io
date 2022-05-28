@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>竞品分析 / Competitors · 精通 ZKEVM</title>
+        <title>设计细节 / Design Notes · 精通 ZKEVM</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 3.6.6">
@@ -57,10 +57,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="evm.html" />
+    <link rel="next" href="proof-aggregation.html" />
     
-    
-    <link rel="prev" href="optimization.html" />
     
 
     </head>
@@ -102,9 +100,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2" data-path="proof-system.html">
+        <li class="chapter " data-level="1.2" data-path="../proof-system.html">
             
-                <a href="proof-system.html">
+                <a href="../proof-system.html">
             
                     
                     证明系统 / Proof Systems
@@ -115,14 +113,14 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3" >
+        <li class="chapter " data-level="1.3" data-path="./">
             
-                <span>
+                <a href="./">
             
                     
                     ZKEVM
             
-                </span>
+                </a>
             
 
             
@@ -142,7 +140,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2" data-path="design-notes.html">
+        <li class="chapter active" data-level="1.3.2" data-path="design-notes.html">
             
                 <a href="design-notes.html">
             
@@ -186,7 +184,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.4" data-path="competitor.html">
+        <li class="chapter " data-level="1.4" data-path="competitor.html">
             
                 <a href="competitor.html">
             
@@ -199,9 +197,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5" data-path="evm.html">
+        <li class="chapter " data-level="1.5" data-path="../evm.html">
             
-                <a href="evm.html">
+                <a href="../evm.html">
             
                     
                     EVM
@@ -242,7 +240,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >竞品分析 / Competitors</a>
+        <a href=".." >设计细节 / Design Notes</a>
     </h1>
 </div>
 
@@ -257,12 +255,14 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x7ADE;&#x54C1;&#x5206;&#x6790;--competitors">&#x7ADE;&#x54C1;&#x5206;&#x6790; / Competitors</h1>
-<h2 id="starknet">StarkNet</h2>
-<h2 id="polygon-hermez">Polygon Hermez</h2>
-<h2 id="zksync-20">zkSync 2.0</h2>
-<h2 id="consensys">Consensys</h2>
-<p>Consensys &#x7684; ZKEVM &#x8BBE;&#x8BA1;&#x767D;&#x76AE;&#x4E66;&#x5728;&#x8FD9;&#x91CC;&#x53EF;&#x4EE5;&#x627E;&#x5230;&#xFF1A;<a href="https://ethresear.ch/t/a-zk-evm-specification/11549" target="_blank">https://ethresear.ch/t/a-zk-evm-specification/11549</a></p>
+                                <h1 id="&#x8BBE;&#x8BA1;&#x7EC6;&#x8282;--design-notes">&#x8BBE;&#x8BA1;&#x7EC6;&#x8282; / Design Notes</h1>
+<h2 id="1-&#x5982;&#x4F55;&#x4FDD;&#x8BC1;-opcodes-&#x6CA1;&#x6709;&#x88AB;&#x4F2A;&#x9020;&#x7BE1;&#x6539;">1. &#x5982;&#x4F55;&#x4FDD;&#x8BC1; Opcodes &#x6CA1;&#x6709;&#x88AB;&#x4F2A;&#x9020;/&#x7BE1;&#x6539;</h2>
+<h2 id="2-random-linear-combination">2. Random Linear Combination</h2>
+<p><strong>TODO:</strong> &#x5B89;&#x5168;&#x6027;&#x5206;&#x6790;</p>
+<p><strong>TODO:</strong> &#x5982;&#x4F55;&#x8868;&#x793A;&#x4E00;&#x4E2A; WORD</p>
+<h2 id="3-gas-&#x89C4;&#x5219;">3. Gas &#x89C4;&#x5219;</h2>
+<p><strong>TODO:</strong> &#x9075;&#x4ECE;&#x7684; gas &#x89C4;&#x5219;&#x662F;...</p>
+<p><strong>TODO:</strong> &#x5982;&#x4F55;&#x9632;&#x8303; gas &#x653B;&#x51FB;</p>
 
                                 
                                 </section>
@@ -290,12 +290,8 @@
 
             
                 
-                <a href="optimization.html" class="navigation navigation-prev " aria-label="Previous page: 优化 / Optimization">
-                    <i class="fa fa-angle-left"></i>
-                </a>
                 
-                
-                <a href="evm.html" class="navigation navigation-next " aria-label="Next page: EVM">
+                <a href="proof-aggregation.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 聚合电路 / Proof Aggregation">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -306,7 +302,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"竞品分析 / Competitors","level":"1.4","depth":1,"next":{"title":"EVM","level":"1.5","depth":1,"path":"contents/evm.md","ref":"contents/evm.md","articles":[]},"previous":{"title":"优化 / Optimization","level":"1.3.4","depth":2,"path":"contents/optimization.md","ref":"contents/optimization.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"精通 ZKEVM","gitbook":"*"},"file":{"path":"contents/competitor.md","mtime":"2022-05-28T06:17:42.386Z","type":"markdown"},"gitbook":{"version":"3.6.6","time":"2022-05-28T06:17:43.080Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"设计细节 / Design Notes","level":"1.3.2","depth":2,"next":{"title":"聚合电路 / Proof Aggregation","level":"1.3.3","depth":2,"path":"zkevm/proof-aggregation.md","ref":"zkevm/proof-aggregation.md","articles":[]},"previous":{"title":"架构 / Architecture","level":"1.3.1","depth":2,"ref":"","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"精通 ZKEVM","gitbook":"*"},"file":{"path":"zkevm/design-notes.md","mtime":"2022-05-28T06:29:30.230Z","type":"markdown"},"gitbook":{"version":"3.6.6","time":"2022-05-28T06:29:30.808Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
