@@ -2,7 +2,7 @@
 
 zkevm-circuits 采用 [halo2](https://github.com/zcash/halo2) 库编写。
 
-## halo2 vs bellman_ce
+## halo2 vs bellman_ce vs arkworks
 
 __TODO:__
 
