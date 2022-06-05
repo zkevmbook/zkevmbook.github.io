@@ -31,8 +31,3 @@ __TODO:__
 
 ### 3.2 PLONK
 
-## 4. Misc
-### vector commitment
-vector commitment 是 polynomial commitments 的一种。
-
-polynomial commitments 不用提供每个 sibling 就能 open&verify，所以达到了 减小 witness 的效果
