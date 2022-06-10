@@ -6,6 +6,7 @@ SHA3-256 (`keccak`) 在 Layer 1 EVM 中成本低（通过 precompile），但是
 
 具体来讲，Scroll 的 zkEVM 方案会替换掉：
 
++ Transaction hash
 + Receipt hash
 + Compute contract addresses
 + Merkle Patricia Trie
@@ -14,8 +15,6 @@ SHA3-256 (`keccak`) 在 Layer 1 EVM 中成本低（通过 precompile），但是
 
 + `SHA3` opcode
     * 这个不应该替换，否则语义、定义不一致
-+ Transaction hash
-    + 会导致和 metamask 不兼容?
 + Code hash
     * 因为调用次数不多
 
