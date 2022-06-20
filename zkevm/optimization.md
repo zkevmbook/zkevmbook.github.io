@@ -4,6 +4,8 @@
 
 SHA3-256 (`keccak`) 在 Layer 1 EVM 中成本低（通过 precompile），但是在电路中证明成本很高。所以 scroll 选择了将一些 `keccak` hash 替换为 zkp-friendly 的 `Poseidon` hash。
 
+<!-- 
+
 具体来讲，Scroll 的 zkEVM 方案会替换掉：
 
 + Transaction hash
@@ -23,6 +25,8 @@ SHA3-256 (`keccak`) 在 Layer 1 EVM 中成本低（通过 precompile），但是
 由于没什么人会在合约中直接计算 Transaction hash（无法计算）、Receipt hash（无法计算）、contract addresses（不会直接计算，而是通过 `CREATE`、`CREATE2` 包了起来，不会影响到用户使用），所以对用户写合约没什么影响。
 
 可能有影响的是，Merkle Patricia Trie 的改变会影响到 blockheader 的计算。比如 https://github.com/lidofinance/curve-merkle-oracle 就在合约中直接计算了 blockheader。但是 Lido 也说自己会废弃掉这个合约（以后找 chainlink 拿 blockheader）。（并且直接在合约中计算 blockheader 本来也不是一种好方式，比如假如以太坊升级为 verkle tree，lido 的这个合约也会被影响、作废。）
+
+ -->
 
 ## 2. FRI
 
