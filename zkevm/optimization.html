@@ -260,27 +260,29 @@
                                 <h1 id="&#x4F18;&#x5316;--optimization">&#x4F18;&#x5316; / Optimization</h1>
 <h2 id="1-&#x66FF;&#x6362;-hash">1. &#x66FF;&#x6362; hash</h2>
 <p>SHA3-256 (<code>keccak</code>) &#x5728; Layer 1 EVM &#x4E2D;&#x6210;&#x672C;&#x4F4E;&#xFF08;&#x901A;&#x8FC7; precompile&#xFF09;&#xFF0C;&#x4F46;&#x662F;&#x5728;&#x7535;&#x8DEF;&#x4E2D;&#x8BC1;&#x660E;&#x6210;&#x672C;&#x5F88;&#x9AD8;&#x3002;&#x6240;&#x4EE5; scroll &#x9009;&#x62E9;&#x4E86;&#x5C06;&#x4E00;&#x4E9B; <code>keccak</code> hash &#x66FF;&#x6362;&#x4E3A; zkp-friendly &#x7684; <code>Poseidon</code> hash&#x3002;</p>
-<p>&#x5177;&#x4F53;&#x6765;&#x8BB2;&#xFF0C;Scroll &#x7684; zkEVM &#x65B9;&#x6848;&#x4F1A;&#x66FF;&#x6362;&#x6389;&#xFF1A;</p>
-<ul>
-<li>Transaction hash</li>
-<li>Receipt hash</li>
-<li>Compute contract addresses</li>
-<li>Merkle Patricia Trie</li>
-</ul>
-<p>&#x4E0D;&#x4F1A;&#x66FF;&#x6362;&#x6389;&#xFF1A;</p>
-<ul>
-<li><code>SHA3</code> opcode<ul>
-<li>&#x8FD9;&#x4E2A;&#x4E0D;&#x5E94;&#x8BE5;&#x66FF;&#x6362;&#xFF0C;&#x5426;&#x5219;&#x8BED;&#x4E49;&#x3001;&#x5B9A;&#x4E49;&#x4E0D;&#x4E00;&#x81F4;</li>
-</ul>
-</li>
-<li>Code hash<ul>
-<li>&#x56E0;&#x4E3A;&#x8C03;&#x7528;&#x6B21;&#x6570;&#x4E0D;&#x591A;</li>
-</ul>
-</li>
-</ul>
-<h3 id="&#x5BFC;&#x81F4;&#x7684;&#x540E;&#x679C;">&#x5BFC;&#x81F4;&#x7684;&#x540E;&#x679C;</h3>
-<p>&#x7531;&#x4E8E;&#x6CA1;&#x4EC0;&#x4E48;&#x4EBA;&#x4F1A;&#x5728;&#x5408;&#x7EA6;&#x4E2D;&#x76F4;&#x63A5;&#x8BA1;&#x7B97; Transaction hash&#xFF08;&#x65E0;&#x6CD5;&#x8BA1;&#x7B97;&#xFF09;&#x3001;Receipt hash&#xFF08;&#x65E0;&#x6CD5;&#x8BA1;&#x7B97;&#xFF09;&#x3001;contract addresses&#xFF08;&#x4E0D;&#x4F1A;&#x76F4;&#x63A5;&#x8BA1;&#x7B97;&#xFF0C;&#x800C;&#x662F;&#x901A;&#x8FC7; <code>CREATE</code>&#x3001;<code>CREATE2</code> &#x5305;&#x4E86;&#x8D77;&#x6765;&#xFF0C;&#x4E0D;&#x4F1A;&#x5F71;&#x54CD;&#x5230;&#x7528;&#x6237;&#x4F7F;&#x7528;&#xFF09;&#xFF0C;&#x6240;&#x4EE5;&#x5BF9;&#x7528;&#x6237;&#x5199;&#x5408;&#x7EA6;&#x6CA1;&#x4EC0;&#x4E48;&#x5F71;&#x54CD;&#x3002;</p>
-<p>&#x53EF;&#x80FD;&#x6709;&#x5F71;&#x54CD;&#x7684;&#x662F;&#xFF0C;Merkle Patricia Trie &#x7684;&#x6539;&#x53D8;&#x4F1A;&#x5F71;&#x54CD;&#x5230; blockheader &#x7684;&#x8BA1;&#x7B97;&#x3002;&#x6BD4;&#x5982; <a href="https://github.com/lidofinance/curve-merkle-oracle" target="_blank">https://github.com/lidofinance/curve-merkle-oracle</a> &#x5C31;&#x5728;&#x5408;&#x7EA6;&#x4E2D;&#x76F4;&#x63A5;&#x8BA1;&#x7B97;&#x4E86; blockheader&#x3002;&#x4F46;&#x662F; Lido &#x4E5F;&#x8BF4;&#x81EA;&#x5DF1;&#x4F1A;&#x5E9F;&#x5F03;&#x6389;&#x8FD9;&#x4E2A;&#x5408;&#x7EA6;&#xFF08;&#x4EE5;&#x540E;&#x627E; chainlink &#x62FF; blockheader&#xFF09;&#x3002;&#xFF08;&#x5E76;&#x4E14;&#x76F4;&#x63A5;&#x5728;&#x5408;&#x7EA6;&#x4E2D;&#x8BA1;&#x7B97; blockheader &#x672C;&#x6765;&#x4E5F;&#x4E0D;&#x662F;&#x4E00;&#x79CD;&#x597D;&#x65B9;&#x5F0F;&#xFF0C;&#x6BD4;&#x5982;&#x5047;&#x5982;&#x4EE5;&#x592A;&#x574A;&#x5347;&#x7EA7;&#x4E3A; verkle tree&#xFF0C;lido &#x7684;&#x8FD9;&#x4E2A;&#x5408;&#x7EA6;&#x4E5F;&#x4F1A;&#x88AB;&#x5F71;&#x54CD;&#x3001;&#x4F5C;&#x5E9F;&#x3002;&#xFF09;</p>
+<!-- 
+
+具体来讲，Scroll 的 zkEVM 方案会替换掉：
+
++ Transaction hash
++ Receipt hash
++ Compute contract addresses
++ Merkle Patricia Trie
+
+不会替换掉：
+
++ `SHA3` opcode
+    * 这个不应该替换，否则语义、定义不一致
++ Code hash
+    * 因为调用次数不多
+
+### 导致的后果
+
+由于没什么人会在合约中直接计算 Transaction hash（无法计算）、Receipt hash（无法计算）、contract addresses（不会直接计算，而是通过 `CREATE`、`CREATE2` 包了起来，不会影响到用户使用），所以对用户写合约没什么影响。
+
+可能有影响的是，Merkle Patricia Trie 的改变会影响到 blockheader 的计算。比如 https://github.com/lidofinance/curve-merkle-oracle 就在合约中直接计算了 blockheader。但是 Lido 也说自己会废弃掉这个合约（以后找 chainlink 拿 blockheader）。（并且直接在合约中计算 blockheader 本来也不是一种好方式，比如假如以太坊升级为 verkle tree，lido 的这个合约也会被影响、作废。）
+
+ -->
 <h2 id="2-fri">2. FRI</h2>
 <h2 id="3-&#x79FB;&#x9664;&#x96F6;&#x77E5;&#x8BC6;">3. &#x79FB;&#x9664;&#x96F6;&#x77E5;&#x8BC6;</h2>
 <p>zk-Rollups &#x7528;&#x7684;&#x5176;&#x5B9E;&#x662F; zkp &#x91CC;&#x9762; succinctness &#x7684;&#x7279;&#x6027;&#x5BF9;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x538B;&#x7F29;&#xFF0C;zero-knowledge &#x53CD;&#x800C;&#x5E76;&#x4E0D;&#x662F;&#x5FC5;&#x8981;&#x7684;&#x7279;&#x6027;&#x3002;&#x4E8E;&#x662F;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x79FB;&#x9664; zero-knowledge &#x6765;&#x63D0;&#x5347;&#x6548;&#x7387;&#x3002;</p>
@@ -327,7 +329,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"优化 / Optimization","level":"1.3.4","depth":2,"next":{"title":"竞品分析 / Competitors","level":"1.3.5","depth":2,"path":"zkevm/competitor.md","ref":"zkevm/competitor.md","articles":[]},"previous":{"title":"聚合电路 / Proof Aggregation","level":"1.3.3","depth":2,"path":"zkevm/proof-aggregation.md","ref":"zkevm/proof-aggregation.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"精通 ZKEVM","gitbook":"*"},"file":{"path":"zkevm/optimization.md","mtime":"2022-06-10T14:14:21.016Z","type":"markdown"},"gitbook":{"version":"3.6.6","time":"2022-06-10T14:14:21.727Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"优化 / Optimization","level":"1.3.4","depth":2,"next":{"title":"竞品分析 / Competitors","level":"1.3.5","depth":2,"path":"zkevm/competitor.md","ref":"zkevm/competitor.md","articles":[]},"previous":{"title":"聚合电路 / Proof Aggregation","level":"1.3.3","depth":2,"path":"zkevm/proof-aggregation.md","ref":"zkevm/proof-aggregation.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"精通 ZKEVM","gitbook":"*"},"file":{"path":"zkevm/optimization.md","mtime":"2022-06-20T04:38:24.686Z","type":"markdown"},"gitbook":{"version":"3.6.6","time":"2022-06-20T04:38:25.216Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
