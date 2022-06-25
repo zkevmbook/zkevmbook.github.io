@@ -6,7 +6,7 @@
 
 Polygon Hermez zkEVM rollup 架构：https://docs.hermez.io/zkEVM/overview/
 
-Hermez 设计了 uVM 架构，将 EVM 指令集翻译为中间指令 Micro Opcode，并在 uVM 上执行。
+Hermez 设计了 uVM 架构，将 EVM 指令集翻译为中间指令 Micro Opcode，并在 uVM 上执行。（所以 Hermez 证的是 uVM 的 trace，而不是 EVM 的 trace。）
 
 uVM 架构使用 register 而不是 stack，执行起来的指令数比基于 stack 的 VM 所使用的指令数少。
 
