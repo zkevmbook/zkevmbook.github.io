@@ -1,6 +1,10 @@
 # 优化 / Optimization
 
-## 1. 替换 hash
+## 1. 替换 merkle tree
+
+将 L1 geth 原本的 hexary Merkle Patricia Trie (MPT) 换成了 compressed binary trie，用以减少电路复杂性和 witness 的大小。
+
+## 2. 替换 hash
 
 SHA3-256 (`keccak`) 在 Layer 1 EVM 中成本低（通过 precompile），但是在电路中证明成本很高。所以 scroll 选择了将一些 `keccak` hash 替换为 zkp-friendly 的 `Poseidon` hash。
 
@@ -28,8 +32,8 @@ SHA3-256 (`keccak`) 在 Layer 1 EVM 中成本低（通过 precompile），但是
 
  -->
 
-## 2. FRI
+## 3. FRI
 
-## 3. 移除零知识
+## 4. 移除零知识
 
 zk-Rollups 用的其实是 zkp 里面 succinctness 的特性对数据进行压缩，zero-knowledge 反而并不是必要的特性。于是我们可以移除 zero-knowledge 来提升效率。
