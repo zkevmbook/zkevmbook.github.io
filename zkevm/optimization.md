@@ -13,8 +13,7 @@ SHA3-256 (`keccak`) 在 Layer 1 EVM 中成本低（通过 precompile），但是
 + Transaction hash
 + Receipt hash
 + Code hash
-    * 但是 empty CodeHash 还是用的 keccak 而不是 Poseidon
-        - 因为 [老版本的 OpenZeppelin](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/de99bccbfd4ecd19d7369d01b070aa72c64423c9/contracts/utils/Address.sol#L31)、`pyethereum` 和 `ethereumjs-util` 有用到这个
+    * 同时提供了 poseidon codehash 和 keccack codehash
 + Merkle Patricia Trie's hash
 
 不会替换掉：
